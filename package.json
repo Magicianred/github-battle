@@ -1,0 +1,35 @@
+{
+  "name": "github-battle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roshanjossey/github-battle.git"
+  },
+  "keywords": [
+    "github"
+  ],
+  "author": "RoshanJossey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roshanjossey/github-battle/issues"
+  },
+  "homepage": "https://github.com/Roshanjossey/github-battle#readme",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.6.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.9.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
