@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Roshanjossey/github-battle#readme",
   "dependencies": {
+    "axios": "^0.9.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0"
