@@ -13,7 +13,7 @@ var PromptContainer = React.createClass({
   handleUpdateUser: function(e) {
     this.setState({
       username: e.target.value
-    })
+    });
   },
   handleSubmitUser: function(e) {
     e.preventDefault();
@@ -24,13 +24,13 @@ var PromptContainer = React.createClass({
 
     if (this.props.routeParams.playerOne) {
       //Showdown
-      this.context.router.push({
-        pathname: '/battle',
-        query: {
-          playerOne: this.props.routerParams.playerOne,
-          playerTwo: this.state.username
-        }
-      })
+        this.context.router.push({
+          pathname: '/battle',
+          query: {
+            playerOne: this.props.routeParams.playerOne,
+            playerTwo: this.state.username,
+          }
+        })
     } else {
       //Player 2
       this.context.router.push('/playerTwo/' + this.state.username)
@@ -40,7 +40,7 @@ var PromptContainer = React.createClass({
     return(
       <Prompt 
       onSubmitUser={this.handleSubmitUser}
-      onUpdateUser={this.handleSubmitUser}
+      onUpdateUser={this.handleUpdateUser}
       header={this.props.route.header}
       username={this.state.username}/>
     )
