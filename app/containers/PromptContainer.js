@@ -29,7 +29,7 @@ const PromptContainer = React.createClass({
           pathname: '/battle',
           query: {
             playerOne,
-            playerTwo,
+            playerTwo: username,
           }
         })
     } else {
