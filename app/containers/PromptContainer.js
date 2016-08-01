@@ -22,18 +22,19 @@ const PromptContainer = React.createClass({
       username: ''
     });
 
-    if (this.props.routeParams.playerOne) {
+    const { playerOne } = this.props.routeParams
+    if (playerOne) {
       //Showdown
         this.context.router.push({
           pathname: '/battle',
           query: {
-            playerOne: this.props.routeParams.playerOne,
-            playerTwo: username,
+            playerOne,
+            playerTwo,
           }
         })
     } else {
       //Player 2
-      this.context.router.push('/playerTwo/' + username)
+      this.context.router.push(`/playerTwo/${username}`)
     }
   },
   render: function() {

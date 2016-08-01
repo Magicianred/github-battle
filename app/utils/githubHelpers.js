@@ -2,11 +2,11 @@ import axios from 'axios';
 
 
 function getUserInfo(username) {
-  return axios.get('http://api.github.com/users/' + username)
+  return axios.get(`http://api.github.com/users/${username}`)
 }
 
 function getRepos(username) {
-  return axios.get('http://api.github.com/users/' + username + '/repos?per_page=100')
+  return axios.get(`http://api.github.com/users/${username}/repos?per_page=100`)
 }
 
 function getTotalStars(repos) {
@@ -19,7 +19,7 @@ function getPlayersData(player) {
   .then((totalStars) => (
     {
       followers: player.followers,
-      totalStars: totalStars
+      totalStars
     }
   ))
 }
