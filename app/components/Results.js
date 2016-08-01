@@ -1,12 +1,10 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-var styles = require('../styles');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
-var UserDetailsWrapper = require('./UserDetailsWrapper');
-var UserDetails = require('./UserDetails');
-var MainContainer = require('./MainContainer');
-var Loading = require('./Loading');
+import React, { PropTypes } from 'react';
+import styles from '../styles';
+import { Link } from 'react-router';
+import UserDetailsWrapper from './UserDetailsWrapper';
+import UserDetails from './UserDetails';
+import MainContainer from './MainContainer';
+import Loading from './Loading';
 
 function StartOver() {
   return(
@@ -31,8 +29,8 @@ function Results(props) {
         </MainContainer>
   }
 
-  var winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
-  var losingIndex = winningIndex === 1 ? 0 : 1;
+  const winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
+  const losingIndex = winningIndex === 1 ? 0 : 1;
   return (
     <MainContainer>
         <h1>Results</h1>
@@ -55,4 +53,4 @@ Results.propTypes = {
   scores: PropTypes.array.isRequired
 }
 
-module.exports = Results;
+export default Results

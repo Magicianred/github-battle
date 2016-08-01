@@ -1,19 +1,20 @@
-var React = require('react');
-var PropTypes = React.PropTypes
+import React, { PropTypes } from 'react';
 
 function UserDetails (user) {
+  const { score, info } = user;
+  const { name, avatar_url, login, location, company, blog, followers, following, public_repos } = info
   return (
     <div>
-    {!!user.score && <li className="list-group-item"><h3>Score: {user.score}</h3></li>}
-    <li className="list-group-item"> <img src={user.info.avatar_url} className="img-rounded img-responsive"/></li>
-    {user.info.name && <li className="list-group-item">Name: {user.info.name}</li>}
-    <li className="list-group-item">Username: {user.info.login}</li>
-    {user.info.location && <li className="list-group-item">Location: {user.info.location}</li>}
-    {user.info.company && <li className="list-group-item">Company: {user.info.company}</li>}
-    <li className="list-group-item">Followers: {user.info.followers}</li>
-    <li className="list-group-item">Following: {user.info.following}</li>
-    <li className="list-group-item">Public Repos: {user.info.public_repos}</li>
-    {user.info.blog && <li className="list-group-item">Blog: <a href={user.info.blog}> {user.info.blog}</a></li>}
+    {!!score && <li className="list-group-item"><h3>Score: {score}</h3></li>}
+    <li className="list-group-item"> <img src={avatar_url} className="img-rounded img-responsive"/></li>
+    {name && <li className="list-group-item">Name: {name}</li>}
+    <li className="list-group-item">Username: {login}</li>
+    {location && <li className="list-group-item">Location: {location}</li>}
+    {company && <li className="list-group-item">Company: {company}</li>}
+    <li className="list-group-item">Followers: {followers}</li>
+    <li className="list-group-item">Following: {following}</li>
+    <li className="list-group-item">Public Repos: {public_repos}</li>
+    {blog && <li className="list-group-item">Blog: <a href={blog}> {blog}</a></li>}
     </div>
   )
 }
@@ -33,4 +34,4 @@ UserDetails.propTypes = {
   })
 }
 
-module.exports = UserDetails;
+export default UserDetails

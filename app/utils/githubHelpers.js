@@ -1,4 +1,4 @@
-var axios = require('axios');
+import axios from 'axios';
 
 
 function getUserInfo(username) {
@@ -55,4 +55,4 @@ var helpers = {
   }
 };
 
-module.exports = helpers;
+export default helpers
