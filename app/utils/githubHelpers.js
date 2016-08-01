@@ -31,8 +31,7 @@ function calculateScores(players) {
   ]
 }
 
-var helpers = {
-  getPlayerInfo(players){
+export function  getPlayerInfo(players){
     return axios.all(players.map((username) => {
       return getUserInfo(username);
     })).then((info) => {
@@ -42,8 +41,9 @@ var helpers = {
     }).catch((err) => {
       console.warn('Error', err);
     })
-  },
-  battle(players) {
+  }
+
+export function  battle(players) {
     var playerOneData = getPlayersData(players[0]);
     var playerTwoData = getPlayersData(players[1]);
 
@@ -51,6 +51,3 @@ var helpers = {
     .then(calculateScores)
     .catch((err) => {console.warn('Error in playerInfo', err)})
   }
-};
-
-export default helpers
